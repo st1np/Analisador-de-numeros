@@ -9,6 +9,7 @@ var min = Infinity
 var opt = 0
 var soma = 0
 var resetAll = -1
+var multiplicacao = 1
 
 function finalizar() {                                                      //MOSTRAR RESULTADOS (BOTAO DE FINALIZAR)
     if (options.length != 0) {                                            //NAO DEIXA APERTAR O BOTAO ANTES DO NUMERO       
@@ -21,6 +22,7 @@ function finalizar() {                                                      //MO
                     min = Number(optionsn[opt])
                 }
                 soma += Number(optionsn[opt])
+                multiplicacao *= Number(optionsn[opt])
             }
             function medianoFunction(medNum) {                         //CALCULAR MEDIANO
                 optionsn.sort((a, b) => a - b)
@@ -40,7 +42,8 @@ function finalizar() {                                                      //MO
             Menor número: <strong>${min.toFixed(2).replace('.', ',')}</strong></br>
             Soma dos números: <strong>${soma.toFixed(2).replace('.', ',')}</strong></br>
             Média: <strong>${media.toFixed(2).replace('.', ',')}</strong></br>
-            Mediano: <strong>${medianoFunction(optionsn.length).toFixed(2).replace('.', ',')}</strong>`
+            Mediano: <strong>${medianoFunction(optionsn.length).toFixed(2).replace('.', ',')}</strong></br>
+            Números multiplicados: <strong>${multiplicacao.toFixed(2).replace('.', ',')}</strong></br>`
         } else if (resetAll == 1) {     //RESETA TUDO
             is = 1    
             i = 0
